@@ -32,7 +32,7 @@ public class BinarySearch
         
         while (low <= high)
         {
-        	guessCount += guessCount;
+        	guessCount = guessCount + 1;
         	int mid = (low + high)/2;
         	int guess = my_list[mid];
         	
