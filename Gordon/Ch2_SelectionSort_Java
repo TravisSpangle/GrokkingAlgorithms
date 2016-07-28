@@ -1,0 +1,33 @@
+package com.grokkingalorithms;
+
+import java.util.Arrays;
+
+public class SelectionSort {
+
+    public static void main(String[] args) {
+        int[] my_array = new int[]{5, 3, 12, 6, 2, 10};
+        int[] results = SelectionSortDescending(my_array);
+        System.out.println(Arrays.toString(results));
+    }
+
+    public static int[] SelectionSortDescending(int[ ] num )
+    {
+        int i, j, first, temp;
+        for ( i = num.length - 1; i > 0; i--) // Outside loop begins at array length.
+        {
+            first = 0;   //initialize to subscript of first element
+            // Inside loop begins at array index 1 to locate smallest element between positions 1 and i.
+            for(j = 1; j <= i; j ++)
+            {
+                if( num[ j ] < num[ first ] )
+                    first = j;
+            }
+            // Assign index variables to ensure smallest found goes into index i.
+            temp = num[ first ];   //swap smallest found with element in position i.
+            num[ first ] = num[ i ];
+            num[ i ] = temp;
+        }
+        return num;
+    }
+
+}

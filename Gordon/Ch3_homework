@@ -1,0 +1,5 @@
+3.1 What info can you derive from call stack image? 
+- Greet method with local variable Maggie made a call to the Greet2 method, also with local variable named Maggie. The Greet2 method appears to still be executing at the time of the image and control has not yet been handed back to the calling method, Greet. 
+
+3.2 What happens when recursive function runs forever? 
+- The program will continue allocating space on the call stack until system memory runs out and additional calls exceed the stack bounds, potentially resulting in a stack overflow. 

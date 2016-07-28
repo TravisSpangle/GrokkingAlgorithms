@@ -1,0 +1,22 @@
+package com.grokkingalorithms;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int results = fact(5);
+        System.out.println(results);
+    }
+
+    public static int fact(int x)
+    {
+        if (x == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            return x * fact(x-1);
+        }
+    }
+}

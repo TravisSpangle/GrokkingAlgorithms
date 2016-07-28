@@ -1,0 +1,17 @@
+Why does array insert take O(n)? 
+-	Because you have to perform an operation to shift each element after the insertion point. 
+How would you insert an element at the beginning of an array? How long would it take? 
+-	Create a new array to accommodate the inserted element, then shift each element one index higher. Worse case is every element requires a shift operation, so O(n). 
+
+
+Exercise
+2.1	Should a finance app that tracks expenses (lots of inserts, few reads) use an array or a list? List
+2.2	A restaurant order queue… array or list? 
+o	Inserting to last element reading from first, not random so list, insert/delete O(1).
+2.3	Facebook username search… array or list? 
+o	Array, since username lookup requires random access for binary searching, O(log n). List would require simple search, O(n). 
+2.4	Facebook signup… array or list?
+o	Arrays require inserting to maintain order, so performance hit to shift remaining elements.
+o	Lists insert faster. 
+2.5	Facebook hybrid data structure, an array of linked lists… faster or slower than pure array or list?
+o	Compromise. Hybrid approach permits random search for beginning letter, then uses lists to accommodate inserts and deletes. Using a pure array or list affords a performance boost for some of the necessary operations but takes a hit for others. 
