@@ -18,6 +18,25 @@ class ArrayBenchmark
   end
 end
 
+class ArrayAppendBenchmark
+  attr_accessor :amount
+  def initialize(amount=1000)
+    @amount = amount
+  end
+
+  def run
+    list = Array.new(4)
+
+    # Insert @amount elements in the middle of the array
+    @amount.times do
+      list.unshift("value")
+    end
+
+    # Delete elements in the middle until it's empty
+    list.shift until list.empty?
+  end
+end
+
 class ListBenchmark
   attr_accessor :amount
   def initialize(amount=1000)
@@ -49,7 +68,8 @@ class ListBenchmark
     end
 
     def add
-      node = find_last_node
+      node = @head
+      node = node.next unless node.next.nil?
       node.next = Node.new
     end
 
@@ -64,19 +84,48 @@ class ListBenchmark
 
       parent.next = nil
     end
+  end
+end
 
-    def find_last_node
+class ListBenchmark
+  attr_accessor :amount
+  def initialize(amount=1000)
+    @amount = amount
+  end
+
+  def run
+    list = LinkedList.new
+    @amount.times do
+      list.add
+    end
+
+    @amount.times do 
+      list.delete
+    end
+  end
+
+  class LinkedList
+    attr_accessor :head
+    def initialize(node = Node.new)
+      @head = node
+    end
+
+    def add
       node = @head
       node = node.next unless node.next.nil?
-      node
+      node.next = Node.new
     end
-    def display
-      node = @head
 
-      while node != nil do
-        puts node.value
+    def delete
+      node = @head
+      parent = @head
+
+      while node.next != nil
+        parent = node
         node = node.next
       end
+
+      parent.next = nil
     end
   end
 end
@@ -84,18 +133,20 @@ end
 require 'benchmark'
 amount = 10**5
 
-arrays = ArrayBenchmark.new(amount)
-lists = ListBenchmark.new(amount)
+arrays       = ArrayBenchmark.new(amount)
+array_append = ArrayAppendBenchmark.new(amount)
+lists        = ListBenchmark.new(amount)
 
 puts "running #{amount} iterations"
 
 Benchmark.bm do |test|
-  test.report("Array") { arrays.run }
-  test.report("Links") { lists.run }
+  test.report("Array ") { arrays.run       }
+  test.report("Append") { array_append.run }
+  test.report("Links ") { lists.run        }
 end
 
 # running 100000 iterations
-#       user     system      total        real
-#       Array  1.410000   0.000000   1.410000 (  1.414985)
-#       Links  0.040000   0.000000   0.040000 (  0.044408)
-
+# user     system      total        real
+# Array   1.390000   0.000000   1.390000 (  1.394702)
+# Append  0.010000   0.000000   0.010000 (  0.015184)
+# Links   0.050000   0.000000   0.050000 (  0.045955)
