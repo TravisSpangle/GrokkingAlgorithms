@@ -16,7 +16,6 @@
       flex: 0 50%;
       box-sizing: border-box;
       background: #fefefe;
-      border-top: 2px solid #555;
       border-bottom: 2px solid #555;
     }
     section:nth-child(even) {
@@ -27,6 +26,7 @@
       line-height: 1.5em;
       background: #555;
       padding: 0 2%;
+      margin: 0;
     }
     h2 + * {
       display: block;
