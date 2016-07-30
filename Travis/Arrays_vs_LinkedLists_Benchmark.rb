@@ -27,13 +27,13 @@ class ArrayAppendBenchmark
   def run
     list = Array.new(4)
 
-    # Insert @amount elements in the middle of the array
+    # Insert @amount elements at the end of the array
     @amount.times do
-      list.unshift("value")
+      list.push("value")
     end
 
-    # Delete elements in the middle until it's empty
-    list.shift until list.empty?
+    # Delete elements at the end of the array
+    list.pop until list.empty?
   end
 end
 
@@ -49,7 +49,7 @@ class ListBenchmark
       list.add
     end
 
-    @amount.times do 
+    @amount.times do
       list.delete
     end
   end
@@ -58,49 +58,6 @@ class ListBenchmark
     attr_accessor :next,:value
     def initialize(value = "value")
       @value = value
-    end
-  end
-
-  class LinkedList
-    attr_accessor :head
-    def initialize(node = Node.new)
-      @head = node
-    end
-
-    def add
-      node = @head
-      node = node.next unless node.next.nil?
-      node.next = Node.new
-    end
-
-    def delete
-      node = @head
-      parent = @head
-
-      while node.next != nil
-        parent = node
-        node = node.next
-      end
-
-      parent.next = nil
-    end
-  end
-end
-
-class ListBenchmark
-  attr_accessor :amount
-  def initialize(amount=1000)
-    @amount = amount
-  end
-
-  def run
-    list = LinkedList.new
-    @amount.times do
-      list.add
-    end
-
-    @amount.times do 
-      list.delete
     end
   end
 
@@ -145,7 +102,7 @@ Benchmark.bm do |test|
   test.report("Links ") { lists.run        }
 end
 
-# running 100000 iterations
+# running 100,000 iterations
 # user     system      total        real
 # Array   1.390000   0.000000   1.390000 (  1.394702)
 # Append  0.010000   0.000000   0.010000 (  0.015184)
