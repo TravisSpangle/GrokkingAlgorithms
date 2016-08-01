@@ -27,5 +27,5 @@ class SelectionSort
   end
 end
 
-selection = SelectionSort.new
-puts selection.sort([2, 3, 1, 2, 10]).inspect
+# selection = SelectionSort.new
+# puts selection.sort([2, 3, 1, 2, 10]).inspect

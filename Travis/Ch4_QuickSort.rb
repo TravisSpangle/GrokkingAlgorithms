@@ -10,7 +10,6 @@ class QuickSort
   end
 end
 
-array = Array(0..10**3)
-
-quick = QuickSort.new
-puts quick.sort(array).inspect
+# array = Array(0..10**3)
+# quick = QuickSort.new
+# puts quick.sort(array).inspect
