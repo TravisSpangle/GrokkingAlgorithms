@@ -109,3 +109,18 @@ D&Q Quicksort
   console.log(sorted);
 })();
 ```
+# Ch 5 Exercises
+##### 5.1
+Inconsistent
+##### 5.2
+Consistent
+##### 5.3
+Consistent
+##### 5.4
+Inconsistent
+##### 5.5
+Function #4
+##### 5.6
+Function #2
+##### 5.7
+Function #4
