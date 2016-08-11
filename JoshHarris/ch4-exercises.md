@@ -109,6 +109,30 @@ D&Q Quicksort
   console.log(sorted);
 })();
 ```
+
+User Data App
+```javascript
+(function() {
+    var test = {
+        init: function() {
+          localStorage.setItem('10011', JSON.stringify(['Willow', 'Jose', 'Layla']));
+          localStorage.setItem('98101', JSON.stringify(['John', 'Billy']));
+
+        },
+        getByZip: function(zip) {
+          console.log('zip: ' + zip);
+          console.log('Names at zip:')
+          var data = JSON.parse(localStorage.getItem(zip));
+          data.forEach(function(name) {
+            console.log(name)
+          });
+        }
+    }
+    test.init();
+    test.getByZip(10011);
+})();
+```
+
 # Ch 5 Exercises
 ##### 5.1
 Inconsistent
