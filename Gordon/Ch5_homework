@@ -1,7 +1,7 @@
 Q1: We've all taken our tools for granted. 
 Research what algorithm your language of choice uses for generic sorts. 
 
-A1: Oracle docs, “The sort operation uses a slightly optimized merge sort algorithm 
+A1: From the Oracle docs, “The sort operation uses a slightly optimized merge sort algorithm 
 that is fast (guaranteed nlogn) and stable (doesn’t reorder equal elements, important 
 when sorting repeatedly on different attributes, like with your email inbox.)” 
 

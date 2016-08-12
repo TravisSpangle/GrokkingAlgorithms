@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-	// 4.1 Write recursive code for earlier sum function, sum elements of an array.
+	// 4.1 Write recursive code for earlier sum function.
 	int[] a = { 1, 2, 3, 4, 5 };
 	int sum = sumArrayRecurse(a, a.length-1); // pass array and array length, n.
 	System.out.println("The sum of array " +Arrays.toString(a) + " is " + sum);

@@ -1,5 +1,5 @@
 /* Called from Main()
-	int arraySize = 27;
+	int arraySize = 27; 
     int[] qs_array = new RandomArray().getArray(arraySize); // helper method to create random arrays.
     System.out.println("Random array: " + Arrays.toString(qs_array));
     int[] qs_arraySorted = new QuickSort().quick_sort(qs_array);
