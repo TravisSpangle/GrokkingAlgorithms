@@ -1,0 +1,66 @@
+/* Called from Main()
+	int arraySize = 27; 
+    int[] qs_array = new RandomArray().getArray(arraySize); // helper method to create random arrays.
+    System.out.println("Random array: " + Arrays.toString(qs_array));
+    int[] qs_arraySorted = new QuickSort().quick_sort(qs_array);
+    System.out.println("Sorted array: " + Arrays.toString(qs_arraySorted));
+*/
+
+
+package com.grokkingalorithms.gordo;
+
+/**
+ * Created by Gordon on 7/29/2016.
+ */
+public class QuickSort {
+
+    public int[] quick_sort(int[] array)
+    // pre: array is full, all elements are non-null integers
+    // post: the array is sorted in ascending order
+    {
+        quickSort(array, 0, array.length - 1);  // quicksort all the elements in the array
+        return array;
+    }
+
+    public int[] quickSort(int array[], int start, int end)
+    {
+        int i = start;                      // L2R scan index
+        int k = end;                        // R2L scan index
+
+        if (end - start >= 1)               // Recursive-case: length > 1.
+        {
+            int pivot = array[start];       // pivot = first element in the partition
+
+            while (k > i)                   // while scan indices have not met,
+            {
+                while (array[i] <= pivot && i <= end && k > i)   // L2R scan for first > pivot.
+                    i++;
+                while (array[k] > pivot && k >= start && k >= i) // R2L scan for first < pivot.
+                    k--;
+                if (k > i)                                       // if R2L index < L2R index, swap their elements
+                    swap(array, i, k);
+            }
+            swap(array, start, k);          // after R2L and L2R indices cross, swap last L2R element with pivot.
+
+            quickSort(array, start, k - 1); // Recurse the left partition.
+            quickSort(array, k + 1, end);   // Recurse the right partition.
+        }
+        else                                // Base-case, length < 2.
+        {
+            return array;                   // the array is sorted, so exit
+        }
+        return array;
+    } // end quickSort()
+
+    public int[] swap(int array[], int index1, int index2)
+    // pre: array is full and index1, index2 < array.length
+    // post: the values at indices 1 and 2 have been swapped
+    {
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+
+        return array;
+    }
+
+} // end QuickSort class.
