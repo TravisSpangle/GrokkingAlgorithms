@@ -1,0 +1,49 @@
+public class Main {
+
+    public static void main(String[] args) {
+
+	// 4.1 Write recursive code for earlier sum function, sum elements of an array.
+	int[] a = { 1, 2, 3, 4, 5 };
+	int sum = sumArrayRecurse(a, a.length-1); // pass array and array length, n.
+	System.out.println("The sum of array " +Arrays.toString(a) + " is " + sum);
+
+	// 4.1
+    	public static int sumArrayRecurse(int[] a, int n) {
+        	if (n == 0) return a[n]; // base-case, a.length < 2
+        	else return a[n] + sumArrayRecurse(a, n - 1);
+    	}
+
+	// 4.2 Write recursive function to count the number of items in a list.
+       	int[] a = {1, 2, 3, 4, 5, 8, 9, 172};
+        System.out.println("Array " + Arrays.toString(a) + " has " + countElementsRecurse(a, a.length) + " elements.");
+
+	// 4.2
+    	public static int countElementsRecurse(int[] a, int n) {
+        	if (n <= 1) return n; // base-case, a.length < 2.
+        	else return countElementsRecurse(a, n - 1) + 1; // recursive case
+    	}
+
+	// 4.3 Find the maximum number in a list.
+        int arraySize = 13; // breaks if 0.
+        int[] a = new RandomArray().getArray(arraySize);
+        System.out.println("Random array: " + Arrays.toString(a));
+	int maxNum = findMaxRecurse(a, a.length-1);
+        System.out.println("Max value: " + maxNum);
+
+	// 4.3
+    	public static int findMaxRecurse(int[] a, int n) {
+        	if (n <= 1) { return a[0]; } // base-case, a.length < 2.
+        	else { return Math.max(a[n], findMaxRecurse(a, n - 1)); } // recursive case
+    	}
+
+ } // end Main()
+} // end Main class
+
+4.5 Come up with a base & recursive case for binary search. 
+	- Base case: array.length < 2
+	- Recursive case: array.length >= 2
+4.5 What Big-O to print the value of each element in an array? O(n)
+4.6 What Big-O to double the value of each element in an array? O(n)
+4.7 What Big-O to double just the first element in an array? O(1)
+4.8 What Big-O to create a multiplication table from each element in an array? O(n^2)
+
