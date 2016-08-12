@@ -90,10 +90,14 @@ distribution? Assume a hash table size of 10 slots.
 5.5 	 A phonebook where the keys are names and values are phone
 numbers. The names are as follows: Esther, Ben, Bob, and Dan.
 
+-- C and D
 
 5.6 	 A mapping from battery size to power. The sizes are A, AA, AAA,
 and AAAA.
 
+-- B and D
 
 5.7 	 A mapping from book titles to authors. The titles are Maus, Fun
 Home, and Watchmen
+
+-- B, C, D
