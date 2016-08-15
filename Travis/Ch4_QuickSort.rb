@@ -22,21 +22,23 @@ class QuickMiddle
   end
 end
 
-require 'benchmark'
-
-quick  = QuickSort.new
-middle = QuickMiddle.new
-
-3.times do
-  num = 6
-  amount = 10**num
-  unsorted = Array(0..amount).shuffle
-
-  Benchmark.bm do |sort|
-    sort.report("quick  #{num}") { quick.sort(unsorted.clone) }
-    sort.report("middle #{num}") { middle.sort(unsorted.clone) }
-  end
-end
+#require 'benchmark'
+#
+#quick    = QuickSort.new
+#middle   = QuickMiddle.new
+#in_array = QuickWithoutDuplicatingArray.new
+#
+#3.times do
+#  num = 6
+#  amount = 10**num
+#  unsorted = Array(0..amount).shuffle
+#
+#  Benchmark.bm do |sort|
+#    sort.report("quick  #{num}") { quick.sort(unsorted.clone)    }
+#    sort.report("middle #{num}") { middle.sort(unsorted.clone)   }
+#    sort.report("no dup #{num}") { in_array.sort(unsorted.clone) }
+#  end
+#end
 
 # user     system      total        real
 # quick  5  0.280000   0.010000   0.290000 (  0.279680)
