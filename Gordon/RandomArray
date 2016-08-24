@@ -1,0 +1,22 @@
+package com.grokkingalorithms.gordo;
+
+/**
+ * Created by Gordon on 7/29/2016. 
+ */
+public class RandomArray
+{
+    //pre: array size > 0 passed in from caller.
+    //post: a random integer array returned to caller.
+    public static int[] getArray(int size)
+    {
+        int[] array = new int[size];
+        int item;
+
+        for(int i=0; i<size; i++)
+        {
+            item = (int)(Math.random()*100);
+            array[i] = item;
+        }
+        return array;
+    }
+}
