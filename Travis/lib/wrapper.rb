@@ -25,11 +25,11 @@ def measure(&block)
   time = Benchmark.realtime do
     yield
   end
- #  puts ObjectSpace.count_objects
+#  puts ObjectSpace.count_objects
   unless no_gc
     GC.start(full_mark: true, immediate_sweep: true, immediate_mark: false)
   end
-  # puts ObjectSpace.count_objects
+#  puts ObjectSpace.count_objects
   gc_stat_after = GC.stat
   memory_after = `ps -o rss= -p #{Process.pid}`.to_i/1024
 
