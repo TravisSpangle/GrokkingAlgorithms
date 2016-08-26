@@ -1,3 +1,18 @@
+
+/*
+Exercises
+4.1 Write (recursive & iterative) code for earlier sum function.
+4.2 Write recursive function to count the number of items in a list.
+4.3 Find the maximum number in a list. SO post. 
+4.4 Come up with a base & recursive case for binary search. 
+•	Base case: array.length <= 1
+•	Recursive case: array[low] < array[high]
+4.5 What Big-O to print the value of each element in an array? O(n)
+4.6 What Big-O to double the value of each element in an array? O(n)
+4.7 What Big-O to double just the first element in an array? O(1)
+4.8 What Big-O to create a multiplication table from each element in an array? O(n^2)
+*/
+
 public class Main {
 
     public static void main(String[] args) {
