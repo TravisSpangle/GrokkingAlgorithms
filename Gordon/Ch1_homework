@@ -1,4 +1,4 @@
-What algorithm is behind string.indexOf()? 
+What algorithm is behind the Java search string.indexOf()? 
 Answer = Naïve string search, worse case = O(n*m), where n is the set size and m is the substring size.
 
 From StackOverflow
@@ -7,3 +7,11 @@ http://stackoverflow.com/questions/3562919/what-is-the-cost-complexity-of-a-stri
 Java source code for indexOf()
 See line# 1576
 http://www.docjar.com/html/api/java/lang/String.java.html
+
+Exercises
+1.1	How many worst case steps to search 128 items? O(log 128) = 7 steps
+1.2	How many worst case steps if you double the list? O(log 256) = 8 steps
+1.3	What O(n) run time describes finding a phone number if you have the name? O(log n)
+1.4	What O(n) run time describes finding a name if you have the phone number? O(n)
+1.5	What O(n) run time describes finding a phone numbers of everyone in the book? O(n)
+1.6	What O(n) run time describes finding a phone number of all A names? O(n)
