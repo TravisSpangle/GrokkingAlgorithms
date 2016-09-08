@@ -26,10 +26,8 @@ typedef struct BfsGraph {
   BfsAdjacency **adjacencies;
 } BfsGraph;
 
-void breadthFirstSearch(BfsGraph *g, BfsVertex *start);
-void bfsGraphCreate(BfsGraph *g, BfsVertex *vertices[], BfsAdjacency *adjacencies[], int edgeCount);
+void bfsGraphInit(BfsGraph *g, BfsVertex *vertices[], int vertexCount, BfsAdjacency *adjacencies[], int edgeCount);
 void bfsGraphFree(BfsGraph *g);
-void bfsPrintVertexPath(BfsGraph *g, BfsVertex *vertexX, BfsVertex *vertexY, int counter);
 
 typedef struct BfsQueue {
   int head;
@@ -38,6 +36,6 @@ typedef struct BfsQueue {
   BfsVertex **queue;
 } BfsQueue;
 
-void bfsQueueCreate(BfsQueue *q, int size);
+void bfsQueueInit(BfsQueue *q, int size);
 BfsVertex* bfsQueuePop(BfsQueue *q);
 void bfsQueuePush(BfsQueue *q, BfsVertex *v);
