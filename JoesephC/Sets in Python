@@ -1,0 +1,32 @@
+# sets in Python
+# In Python, set is an unordered collection of items with no duplicate items.  This makes sets useful for comparisons or testing membership.
+# Python sets *automatically* strip out duplicate entries
+
+>>> basket = {1,2,2,3,3,3,4,4,4,5,6,7,8,9,99}
+>>> basket
+{1, 2, 99, 4, 5, 6, 7, 8, 9, 3}
+
+>>> b = set('aslfjwaoeiroadfalkdsfja')
+>>> b
+{'i', 'd', 'l', 'w', 'k', 'e', 'r', 'j', 's', 'a', 'o', 'f'}
+
+
+>>> foo2 = {'Leanovo', 'Abble', 'IBN', 'Macrosoft'}
+>>> foo2 = {'Leanovo', 'Abble', 'IBN', 'Microsoft', 'BookFace'}
+
+# entries in foo that are not in foo2
+>>> foo - foo2
+{'IBM', 'Lenovo', 'Apple'}
+
+# union of foo and foo2
+>>> foo | foo2
+{'Microsoft', 'Leanovo', 'IBM', 'BookFace', 'Abble', 'IBN', 'Apple', 'Lenovo'}
+
+# entries that are in both foo and foo2
+>>> foo & foo2
+{'Microsoft'}
+
+# entries in foo and foo2 that are NOT similar
+>>> foo ^ foo2
+{'Leanovo', 'BookFace', 'IBM', 'Abble', 'IBN', 'Apple', 'Lenovo'}
+
