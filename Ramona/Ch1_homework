@@ -1,0 +1,9 @@
+What algorithm is behind string.indexOf()? 
+Answer = Naïve string search, worse case = O(n*m), where n is the set size and m is the substring size.
+
+From StackOverflow
+http://stackoverflow.com/questions/3562919/what-is-the-cost-complexity-of-a-string-indexof-function-call
+
+Java source code for indexOf()
+See line# 1576
+http://www.docjar.com/html/api/java/lang/String.java.html
