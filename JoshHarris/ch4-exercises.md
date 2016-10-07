@@ -81,7 +81,7 @@ O(n²)
 Javascript generic sort:
 Array.prototype.sort()
 
-D&Q Quicksort
+### D&Q Quicksort
 ```javascript
 (function() {
   var numSet = [2,62,9,18,32,8,53];
@@ -110,7 +110,7 @@ D&Q Quicksort
 })();
 ```
 
-User Data App
+### User Data App
 ```javascript
 (function() {
     var test = {
