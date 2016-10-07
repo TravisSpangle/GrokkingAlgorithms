@@ -1,0 +1,18 @@
+Chapter 6 and 7 Questions
+
+6.1 -- 2 steps
+
+6.2 -- 2 steps
+
+6.3 -- A is INvalid ***WHY: shower and brush teeth can swap places, but cannot come before eating breakfast ; B is valid; even if it has brushing teeth before eating, that is fine as showering is independent of the wake/brush/eat path; C is invalid as it has showering before waking up
+
+6.4 -- Wake up-> exercise -> shower -> get dressed -> pack lunch -> brush teeth -> eat breakfast (the latter cannot come before the former, as the original diagram has teeth before breakfast)
+
+6.5 -- A; B is not a tree as it tries to move backwards up the tree; C is a tree, but on its side
+
+
+7.1  Shortest Path
+ -- A.  8 (5, 2, 1)
+ -- B.  60 (10, 20, 30)
+ -- C.  4 (2, 2; cannot use negative edges) ***Trick question
+
