@@ -16,6 +16,7 @@ class Array
 end
 
 class CampingPacker
+  attr_reader :backpack
 
   POUNDS = 6
 
@@ -43,7 +44,7 @@ class CampingPacker
 
     # retrieve all items curently in this row
     #  and append the current_item
-    potential_items = @backpack[row].compact + [current_item]
+    potential_items = backpack[row].compact + [current_item]
 
     # find the item with the highest score
     best_item = potential_items.max_by { |item| item.score }
@@ -57,14 +58,14 @@ class CampingPacker
       best_item = [best_item, filler].flatten if filler.score > 0 rescue binding.pry
     end
       
-    item_above = row > 0 ? @backpack[row-1][col] : blank_item
+    item_above = row > 0 ? backpack[row-1][col] : blank_item
 
     best_item.score > item_above.score ? best_item : item_above
   end
 
   def filler_items(row:, capacity:, item:)
     loop do
-      filler = @backpack[row][capacity]
+      filler = backpack[row][capacity]
 
       return blank_item if filler.nil?
       return filler unless already_collected?(filler:filler, item:item)
@@ -83,18 +84,52 @@ class CampingPacker
 
   def pack
     @items.each_with_index do |item, row|
-      @backpack[row] = Array.new(POUNDS)
+      backpack[row] = Array.new(POUNDS)
       POUNDS.times do |col|
-        @backpack[row][col] = find_best_item(item:item, row:row, col:col)
+        backpack[row][col] = find_best_item(item:item, row:row, col:col)
       end
     end
   end
 
   def display
-    puts @backpack.last.last
+    puts backpack.last.last
   end
 end
 
 camping_packer = CampingPacker.new
 camping_packer.pack
 camping_packer.display
+
+
+Item = Struct.new(:name, :weight, :score)
+items = []
+items << Item.new('water'  , 3 , 10)
+items << Item.new('food'   , 2 , 9)
+items << Item.new('jacket' , 2 , 5)
+items << Item.new('book'   , 1 , 3)
+items << Item.new('camera' , 1 , 6)
+
+class Array
+  def best_item_by_weight!(weight)
+   items_that_fit = self.select { |i| i.weight <= weight }
+   best_item = items_that_fit.max_by { |i| i.score }
+   self.delete( best_item )
+  end
+end
+
+def pack_backpack(items, weight,backpack = Array.new(items.length))
+  return backpack[weight] unless backpack[weight].nil?
+
+  best_items = [items.best_item_by_weight!(weight)]
+  new_weight = weight - best_items.reduce(0){ |total,i| total + i.weight }
+  best_items << pack_backpack(items, new_weight) unless new_weight == 0
+
+  backpack[weight] = best_items
+end
+
+puts pack_backpack(items, 6)
+ 
+
+
+
+
