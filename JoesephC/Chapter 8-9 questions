@@ -1,0 +1,56 @@
+8.1  Truck packing
+
+ -- pack the largest boxes in first, with smaller boxes on and around the larger ones as you progress
+
+8.2  Travel problem
+
+ -- go to those locations that are of the highest point value, that are nearest to each other 
+
+Are the following greedy?
+8.3  Quicksort - not greedy; does not care about most optimal solution
+8.4  Breadth-first search - greedy - greedy in terms of finding the shortest distance
+8.5  Dijkstra - greedy -- looks for the highest point value first
+
+8.6 A postman needs to deliver to 20 homes. He needs to find the
+shortest route that goes to all 20 homes. Is this an NP-complete
+problem?
+
+-- yes; there are 20! possible routes 
+
+8.7 Finding the largest clique in a set of people (a clique is a set of people
+who all know each other). Is this an NP-complete problem?
+
+-- yes; you would have to effectively ask everyone whom they were friends with
+
+8.8 You’re making a map of the USA, and you need to color adjacent
+states with different colors. You have to find the minimum number
+of colors you need so that no two adjacent states are the same color.
+Is this an NP-complete problem?
+
+-- no; this is done very often, plus there is only a small set of possibilities one is dealing with ***????
+
+What are approximation algorithms?
+ - Approximation algorithms are used to find approximate solutions to problems.  They are often used to find reasonable solutions to NP-complete problems, where the 
+precise solution may not be reached in a sane period of time.  
+
+What defines a greedy stategy?
+ - A greedy strategy is finding the most optimal route or solution.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9.1 should you steal the $1000 player?
+
+-- Yes, as the ipod, mp3 player, and guitar would net $4500
+
+9.2
+ -- water, food, camera
+
+What is dynamic programming?
+ - Dyanimc programming is a form of programming where a large problem is broken down into smaller subproblems to be solved.  
+
+When is it an appropriate solution?
+ - When one is comparing words or options to see how they are similar or which is the most optimal.
+
+---------------------------------------------------------------------------------------------------------------
+
+

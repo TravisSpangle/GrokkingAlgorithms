@@ -1,3 +1,12 @@
+# Mountain
+# You are provided a matrix of 0's and 1's. 
+# This represents a mountain where a 0 is a skiable path 
+# and 1 is a tree or a rock. 
+#
+# write a class that will 
+# 1. Confirm the mountain has a skiable path from top to bottom
+# 2. Return the skiable path
+
 require 'pry'
 
 class SkiPath
