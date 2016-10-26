@@ -1,10 +1,39 @@
+class Day
+  attr_reader :weather, :weekend, :game, :loaves
+
+  def initialize(weather, weekend, game, loaves)
+    @weather = weather
+    @weekend = weekend
+    @game    = game
+    @loaves  = loaves
+  end
+
+  def score(today)
+    total = weather_distance(today)**2 + weekend_distance(today)**2 + game_distance(today)**2
+    Math.sqrt(total)
+  end
+
+  private
+
+  def weather_distance(today)
+    today.weather - weather
+  end
+
+  def weekend_distance(today)
+    today.weekend - weekend
+  end
+
+  def game_distance(today)
+    today.game - game
+  end
+end
+
 class LoaveEstimater
-  Day = Struct.new(:weather, :weekend, :game, :loaves)
   attr_reader :today, :neighbors
 
   def self.estimate(day, history)
     estimate = self.new(day)
-    estimate.neighbors=history
+    estimate.neighbors = history
     estimate.average
   end
 
@@ -16,7 +45,7 @@ class LoaveEstimater
   def neighbors=(history)
     history.each do |metrics|
       day                  = Day.new(*metrics)
-      day_score            = score(day)
+      day_score            = day.score(today)
       neighbors[day_score] = [] if neighbors[day_score].nil?
       neighbors[day_score] << day
     end
@@ -30,25 +59,6 @@ class LoaveEstimater
     sample_set.flatten!
 
     sample_set.reduce(0) { |total, day| total + day.loaves } / sample_set.size
-  end
-
-  private
-
-  def score(day)
-    total = weather(day)**2 + weekend(day)**2 + game(day)**2
-    Math.sqrt(total)
-  end
-
-  def weather(day)
-    today.weather - day.weather
-  end
-
-  def weekend(day)
-    today.weekend - day.weekend
-  end
-
-  def game(day)
-    today.game - day.game
   end
 end
 
