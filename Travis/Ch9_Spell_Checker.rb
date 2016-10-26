@@ -28,8 +28,10 @@ using SpellChecker
 
 word = "fosh"
 
-%w(fort fish).each do |sample_word|
+%w(fort dish fish).each do |sample_word|
   puts "Is #{word} supposed to be #{sample_word}? Score:  #{word.spell_check_score(sample_word)} "
 end
+
 # Is fosh supposed to be fort? Score:  2
+# Is fosh supposed to be dish? Score:  2
 # Is fosh supposed to be fish? Score:  3
