@@ -1,6 +1,6 @@
 # Grokking Algorithms Study Group
 
-[http://www.meetup.com/Grokking-Algorithms/](Joing the group on meetup.com)
+[Joing the group on meetup.com](http://www.meetup.com/Grokking-Algorithms/)
 
 ## Book
 [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)
